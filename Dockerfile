@@ -21,7 +21,6 @@ RUN source install/setup.bash
 WORKDIR /workspace/ros2_ws/src/odrive_ros2_pkg
 RUN python3 -m pip install .
 
-# Lidar sdk
 
 RUN apt install cmake pkg-config
 
