@@ -1,4 +1,6 @@
 from setuptools import find_packages, setup
+from os import path
+from glob import glob
 
 package_name = 'odrive_ros2_pkg'
 
@@ -10,6 +12,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (path.join('share', package_name, 'launch'), glob('launch/*launch.[pxy][yma]*'))
     ],
     install_requires=['setuptools',
                       "pyserial==3.5",
