@@ -7,6 +7,7 @@ from std_msgs.msg import Float64, Int32
 import math
 import tf2_ros
 from tf_transformations import quaternion_from_euler
+from std_srvs.srv import Trigger
 
 # from odrive_ros2.odrive_interface import ODriveInterfaceAPI
 from odrive_ros2_pkg.odrive_interface import ODriveInterfaceAPI
@@ -62,6 +63,11 @@ class OdriveNode(Node):
         )
         self.i2t_publisher_right = self.create_publisher(
             Float64, "odrive/right/i2t", self.odom_calc_hz
+        )
+
+        # rospy.Service("reset_odometry", std_srvs.srv.Trigger, self.reset_odometry)
+        self.reset_odometry_service = self.create_service(
+            Trigger, "reset_odometry", self.reset_odometry
         )
 
         self.get_logger().info("Odrive ROS2 driver initialized.")
@@ -275,6 +281,15 @@ class OdriveNode(Node):
         self.x = 0.0
         self.y = 0.0
         self.theta = 0.0
+
+    def reset_odometry(self, request, response):
+        self.x = 0.0
+        self.y = 0.0
+        self.theta = 0.0
+        response.data = True
+        response.msg = "Odometry reset."
+        self.get_logger().info("Odometry request reset!\n")
+        return response
 
     def engage_driver(self):
         self.driver.engage()
