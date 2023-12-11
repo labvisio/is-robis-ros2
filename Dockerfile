@@ -12,7 +12,7 @@ RUN apt-get install -y ros-humble-tf-transformations
 
 WORKDIR /workspace/ros2_ws
 RUN mkdir src/
-RUN git clone https://github.com/labvisio/is-robis-ros2.git \
+RUN git clone -b devel https://github.com/labvisio/is-robis-ros2.git \
     && mv is-robis-ros2/odrive_ros2_pkg src/
 
 WORKDIR /workspace/ros2_ws
