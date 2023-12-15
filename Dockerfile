@@ -28,7 +28,7 @@ RUN apt install cmake pkg-config
 
 WORKDIR /workspace
 
-RUN git clone https://github.com/YDLIDAR/YDLidar-SDK.git
+RUN git clone https://github.com/matheusdutra0207/YDLidar-SDK.git
 WORKDIR /workspace/YDLidar-SDK/build
 RUN cmake ..
 RUN make
@@ -38,7 +38,7 @@ RUN cpack
 WORKDIR /workspace/ros2_ws
 
 RUN cd src/ \
-    && git clone -b humble https://github.com/YDLIDAR/ydlidar_ros2_driver.git \
+    && git clone -b humble https://github.com/matheusdutra0207/ydlidar_ros2_driver.git \
     && cd .. \
     && source /opt/ros/humble/setup.bash \
     && colcon build --packages-select ydlidar_ros2_driver \
