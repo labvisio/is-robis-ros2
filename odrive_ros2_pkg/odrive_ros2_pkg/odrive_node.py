@@ -286,8 +286,8 @@ class OdriveNode(Node):
         self.x = 0.0
         self.y = 0.0
         self.theta = 0.0
-        response.data = True
-        response.msg = "Odometry reset."
+        #response.data = True
+        #response.msg = "Odometry reset."
         self.get_logger().info("Odometry request reset!\n")
         return response
 
@@ -537,9 +537,9 @@ def main(args=None):
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
     # when the garbage collector destroys the node object)
-    node.shutdown()
-    node.destroy_node()
-    rclpy.shutdown()
+    #node.shutdown()
+    #node.destroy_node()
+    #rclpy.shutdown()
 
 
 if __name__ == "__main__":
