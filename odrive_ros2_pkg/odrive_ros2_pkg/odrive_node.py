@@ -152,7 +152,7 @@ class OdriveNode(Node):
         )
         self.declare_parameter(
             "publish_odom_tf",
-            False,
+            True,
             ParameterDescriptor(description="NOT YET IMPLEMENTED!"),
         )
         self.declare_parameter(

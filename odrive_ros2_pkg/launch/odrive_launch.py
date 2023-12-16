@@ -21,8 +21,8 @@ def generate_launch_description():
             ),
             Node(
                 package='tf2_ros',
-                node_executable='static_transform_publisher',
-                node_name='base_link_broadcaster',
+                executable='static_transform_publisher',
+                name='base_link_broadcaster',
                 arguments=['0', '0', '0.06','0', '0', '0', '1','base_footprint','base_link'],
             )
         ]
