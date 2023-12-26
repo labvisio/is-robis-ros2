@@ -2,7 +2,7 @@
 
 ## Run the project
 ```
-sudo docker run --rm --privileged -it --network=host -v "$(pwd):/workspace/src" -v /dev/bus/usb:/dev/bus/usb --name=odrive_ros2 matheusdutra0207/odrive_ros2_pkg:v1 bash
+sudo docker run --rm --privileged -it --network=host -v "$(pwd):/workspace/src" -v /dev/bus/usb:/dev/bus/usb --name=odrive_ros2 odrive_ros2_slan:v1 bash
 ```
 
 ## Initialize the odrive node
