@@ -10,6 +10,7 @@ RUN python3 -m pip install --upgrade odrive
 RUN apt-get install -y ros-humble-diagnostic-updater
 RUN apt-get install -y ros-humble-tf-transformations
 
+
 WORKDIR /workspace/ros2_ws
 RUN mkdir src/
 RUN git clone -b devel https://github.com/labvisio/is-robis-ros2.git \
@@ -44,4 +45,5 @@ RUN cd src/ \
     && colcon build --packages-select ydlidar_ros2_driver \
     && source install/setup.bash 
 
-RUN apt install -y ros-humble-slam-toolbox    
+RUN apt-get update
+RUN apt install -y ros-humble-slam-toolbox 
