@@ -42,4 +42,6 @@ RUN cd src/ \
     && cd .. \
     && source /opt/ros/humble/setup.bash \
     && colcon build --packages-select ydlidar_ros2_driver \
-    && source install/setup.bash \
+    && source install/setup.bash 
+
+RUN apt install -y ros-humble-slam-toolbox    
