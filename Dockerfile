@@ -9,7 +9,7 @@ RUN python3 -m pip install --upgrade odrive
 
 RUN apt-get install -y ros-humble-diagnostic-updater
 RUN apt-get install -y ros-humble-tf-transformations
-
+#RUN apt install -y ros-humble-slam-toolbox
 
 WORKDIR /workspace/ros2_ws
 RUN mkdir src/
@@ -44,6 +44,5 @@ RUN cd src/ \
     && source /opt/ros/humble/setup.bash \
     && colcon build --packages-select ydlidar_ros2_driver \
     && source install/setup.bash 
-
 RUN apt-get update
-RUN apt install -y ros-humble-slam-toolbox 
+RUN apt install -y ros-humble-slam-toolbox  
