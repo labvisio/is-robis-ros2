@@ -23,7 +23,7 @@ def generate_launch_description():
                 package='tf2_ros',
                 executable='static_transform_publisher',
                 name='base_link_broadcaster',
-                arguments=['0', '0', '0.06','0', '0', '0', '1','base_link','base_footprint'],
+                arguments=['0', '0', '0','0', '0', '0', '1','base_link','base_footprint'],
             )
         ]
     )
